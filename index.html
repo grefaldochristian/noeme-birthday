@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Noeme Gojo!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .card-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 450px;
+            animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        /* Card Entrance Animation */
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cake-icon {
+            font-size: 60px;
+            animation: float 2.5s ease-in-out infinite;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Floating Cake Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            color: #ff477e;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .message {
+            color: #4a4a4a;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            color: #ff5c8a;
+            font-weight: bold;
+        }
+
+        .signature {
+            font-style: italic;
+            color: #70d6ff;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Surprise Button */
+        .surprise-btn {
+            background-color: #ff477e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .surprise-btn:hover {
+            background-color: #ff5c8a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.6);
+        }
+
+        .surprise-btn:active {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="cake-icon">🎂</div>
+        <h1>Happy Birthday!</h1>
+        <p class="message">
+            <span class="highlight">Noeme Gojo</span>, wishing you an awesome day ahead from your loyal classmate and <span class="signature">Handsome friend</span>.
+        </p>
+        <button class="surprise-btn" onclick="triggerSurprise()">Click for Surprise! 🎉</button>
+    </div>
+
+    <script>
+        // Trigger explosion immediately on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(triggerSurprise, 500);
+        });
+
+        // Confetti Surprise Function
+        function triggerSurprise() {
+            // Left side burst
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { x: 0.1, y: 0.6 }
+            });
+            // Right side burst
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { x: 0.9, y: 0.6 }
+            });
+        }
+    </script>
+</body>
+</html>
